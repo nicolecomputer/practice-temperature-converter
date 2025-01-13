@@ -1,12 +1,15 @@
 import React from "react"
 import Unit from "./unit"
 
+function sigFigs(value: number, sigFigs: number): number {
+  return Math.round(value * Math.pow(10, sigFigs)) / Math.pow(10, sigFigs)
+}
 function fahrenheitToCelsius(f: number): number {
-  return (f - 32) * (5 / 9)
+  return sigFigs((f - 32) * (5 / 9), 2)
 }
 
 function celsiusToFahrenheit(c: number): number {
-  return c * (5 / 9) + 32
+  return sigFigs(c * (5 / 9) + 32, 2)
 }
 
 export default function App() {
