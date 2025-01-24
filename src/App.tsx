@@ -4,6 +4,7 @@ import Unit from "./unit"
 function sigFigs(value: number, sigFigs: number): number {
   return Math.round(value * Math.pow(10, sigFigs)) / Math.pow(10, sigFigs)
 }
+
 function fahrenheitToCelsius(f: number): number {
   return sigFigs((f - 32) * (5 / 9), 2)
 }
